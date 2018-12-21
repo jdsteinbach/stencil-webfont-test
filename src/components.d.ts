@@ -12,19 +12,30 @@ import '@stencil/core';
 
 export namespace Components {
 
+  interface TestText {}
+  interface TestTextAttributes extends StencilHTMLAttributes {}
+
   interface UseFont {}
   interface UseFontAttributes extends StencilHTMLAttributes {}
 }
 
 declare global {
   interface StencilElementInterfaces {
+    'TestText': Components.TestText;
     'UseFont': Components.UseFont;
   }
 
   interface StencilIntrinsicElements {
+    'test-text': Components.TestTextAttributes;
     'use-font': Components.UseFontAttributes;
   }
 
+
+  interface HTMLTestTextElement extends Components.TestText, HTMLStencilElement {}
+  var HTMLTestTextElement: {
+    prototype: HTMLTestTextElement;
+    new (): HTMLTestTextElement;
+  };
 
   interface HTMLUseFontElement extends Components.UseFont, HTMLStencilElement {}
   var HTMLUseFontElement: {
@@ -33,10 +44,12 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
+    'test-text': HTMLTestTextElement
     'use-font': HTMLUseFontElement
   }
 
   interface ElementTagNameMap {
+    'test-text': HTMLTestTextElement;
     'use-font': HTMLUseFontElement;
   }
 

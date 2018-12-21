@@ -8,9 +8,6 @@ import { Component } from '@stencil/core'
 
 export class UseFont {
   render() {
-    return [
-      <p>If you see a monospace font, it’s failed.</p>,
-      <p>If you see a chunky display font, it’s working.</p>
-    ]
+    return <test-text />
   }
 }
