@@ -3,7 +3,7 @@ import { Component } from '@stencil/core'
 @Component({
   tag: 'use-font',
   styleUrl: 'use-font.css',
-  shadow: true
+  shadow: false
 })
 
 export class UseFont {
